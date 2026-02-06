@@ -11,7 +11,9 @@ import java.util.List;
 public interface JobRepo extends JpaRepository<JobPost, Integer> {
 
     @Query
-    public List<JobPost> findByPostProfileContainingOrPostDescContaining(String postProfile , String postDesc);
+    List<JobPost> findByPostProfileContainingIgnoreCaseOrPostDescContainingIgnoreCase(
+            String postProfile, String postDesc);
+
 
     public List<JobPost> findByReqExperience(int exp);
 }

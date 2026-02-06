@@ -81,10 +81,11 @@ public class JobService {
     }
 
     public List<JobPost> search(String keyword) {
-        return repo.findByPostProfileContainingOrPostDescContaining(keyword , keyword);
+
+        return repo.findByPostProfileContainingIgnoreCaseOrPostDescContainingIgnoreCase(keyword,keyword);
     }
 
-    public List<JobPost> serachByExperience(int exp) {
+    public List<JobPost> searchByExperience(int exp) {
         return repo.findByReqExperience(exp);
     }
 }

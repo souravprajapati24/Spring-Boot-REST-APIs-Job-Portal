@@ -61,8 +61,8 @@ public class JobRestController {
     }
 
     @GetMapping("/jobPost/experience/{experience}")
-    public List<JobPost> searchByExperience(@PathVariable("experience") int exp){
-        return service.serachByExperience(exp);
+    public List<JobPost> searchByExperience(@PathVariable("experience") int experience){
+        return service.searchByExperience(experience);
     }
 
 }
